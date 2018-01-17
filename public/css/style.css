@@ -1,2 +1,75 @@
-html {
-  background: red; }
+html,
+body {
+  box-sizing: border-box; }
+
+body {
+  background-image: url("../assets/bg.jpg");
+  font-family: 'Lato', sans-serif; }
+
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+  background-image: url("../assets/header_bg.svg");
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.topnav {
+  border: 1px solid black;
+  font-family: 'Oswald', sans-serif;
+  overflow: hidden;
+  background-color: #333; }
+
+a {
+  display: inline-block;
+  color: darkgrey;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none; }
+
+a:hover {
+  background-color: orange; }
+
+.footer {
+  background-color: #333;
+  padding: 20 px;
+  text-align: center; }
+
+div.fb {
+  content: url("../assets/facebook_grey.svg"); }
+
+div.insta {
+  content: url("../assets/instagram_grey.svg"); }
+
+div.insta:hover {
+  content: url("../assets/instagram_orange.svg"); }
+
+#main {
+  border: 1px solid #4c00ff;
+  margin: auto;
+  width: auto; }
+
+.tagline {
+  border: 1px solid purple; }
+
+.title {
+  border: 1px solid black; }
+
+/* for vertical centering
+position: relative
+translateY: 50%
+top: -50%
+*/
+/* float left/right won't do anything
+
+display: inline - like span, only takes up as wide as content; takes up margin all the way to full width??
+
+display: inline-block - use this alot! will be as large/wide as content/text, can float left/right
+
+display: table - do not use! unless building a spreadsheet
+
+when using float, use 'overflow: auto'
+
+padding - means padding top/bottom, left/right; so can be explicit in determining attribute
+
+*/
