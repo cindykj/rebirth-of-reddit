@@ -6,9 +6,9 @@ window.onload = function() {
   headerBox.className = 'header';
   document.body.appendChild(headerBox);
 
-  let logoBox = document.createElement('IMG');
-  logoBox.setAttribute('src','../assets/logo.svg');
-  headerBox.appendChild(logoBox);
+  // let logoBox = document.createElement('IMG');
+  // logoBox.setAttribute('src','../assets/logo.svg');
+  // headerBox.appendChild(logoBox);
 
   // Create Nav Bar
   let navBox = document.createElement('div');
@@ -35,7 +35,8 @@ window.onload = function() {
 
   // Create main container
   let mainBox = document.createElement('div');
-  mainBox.idName = 'main';
+  mainBox.id = 'main';
+  mainBox.innerHTML = ''; //drop first then create new content
   document.body.appendChild(mainBox);
   
   // Create Footer + insert FB/Insta logos
@@ -65,9 +66,17 @@ window.onload = function() {
 
     array.forEach(function (element, index, array) {
 
+      let rowBox = document.createElement('div');
+      rowBox.className = 'row';
+      mainBox.appendChild(rowBox);
+
+      let columnBox = document.createElement('div');
+      columnBox.className = 'column';
+      rowBox.appendChild(columnBox);
+
       let containerBox = document.createElement('div');
       containerBox.className = 'container';
-      mainBox.appendChild(containerBox);
+      columnBox.appendChild(containerBox);
 
       let titleBox = document.createElement('div');
       titleBox.className = 'title';
