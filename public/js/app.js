@@ -1,6 +1,6 @@
-window.onload = function() {
+window.onload = function () {
   // console.log('sanity check')
-  
+
   // Create Header
   let headerBox = document.createElement('div');
   headerBox.className = 'header';
@@ -14,32 +14,32 @@ window.onload = function() {
   // Create Random Link
   let randomBox = document.createElement('a');
   randomBox.href = '#';
-  randomBox.innerHTML = 'Random';
+  randomBox.innerHTML = 'RANDOM';
   navBox.appendChild(randomBox);
 
   // Create My Boards Link
   let myBoardBox = document.createElement('a');
   myBoardBox.href = '#';
-  myBoardBox.innerHTML = 'My Boards';
+  myBoardBox.innerHTML = 'MY BOARDS';
   navBox.appendChild(myBoardBox);
-  
+
   // Create Get the App Link
-  let getAppBox = document. createElement('a');
+  let getAppBox = document.createElement('a');
   getAppBox.href = '#';
-  getAppBox.innerHTML = 'Get the App';
+  getAppBox.innerHTML = 'GET THE APP';
   navBox.appendChild(getAppBox);
 
   // Create main box
   let mainBox = document.createElement('div');
   mainBox.id = 'main';
-  mainBox.innerHTML = ''; //drop first then create new content
+  // mainBox.innerHTML = ''; //drop first then create new content
   document.body.appendChild(mainBox);
 
   // Create Container Box
   let containerBox = document.createElement('div');
   containerBox.className = 'container';
   mainBox.appendChild(containerBox);
-  
+
   // Create Footer + insert FB/Insta logos
   let footerBox = document.createElement('div');
   footerBox.className = 'footer';
@@ -54,36 +54,52 @@ window.onload = function() {
   instaBox.className = 'insta';
   footerBox.appendChild(instaBox);
 
-// Create Cat feed
-  let catReq = new XMLHttpRequest();
-  catReq.addEventListener('load', catListener);
-  catReq.open('GET', 'https://www.reddit.com/r/cats.json');
-  catReq.send();
+  // Begin pulling data from Reddit and filling in cardBoxes
+  let getMain = document.getElementsByClassName('container');
 
-  function catListener () {
-    console.log(this.response);
-    let fetch = JSON.parse(this.response);
-    let array = fetch.data.children;
+  function getReddit(url) {
+    let nReq = new XMLHttpRequest();
+    nReq.addEventListener("load", function () {
+      let fetched = JSON.parse(this.response);
+      defaultFeed(fetched, getMain);
+    })
+    nReq.open("GET", url);
+    nReq.send();
+  }
 
-    array.forEach(function (element, index, array) {
+
+  // Create Cat feed
+  // let catReq = new XMLHttpRequest();
+  // catReq.addEventListener('load', defaultFeed);
+  // catReq.open('GET', 'https://www.reddit.com/r/cats.json');
+  // catReq.send();
+
+  function defaultFeed(fetched, parentElem) {
+    let array = fetched.data.children;
+
+    let collectionBox = document.createElement('div');
+    collectionBox.id = 'collection';
+    containerBox.appendChild(collectionBox);
+
+    array.forEach(function (element) {
 
       let cardBox = document.createElement('div');
       cardBox.className = 'card';
-      containerBox.appendChild(cardBox);
+      // containerBox.appendChild(cardBox);
+
+      let imageBox = document.createElement('img');
+      imageBox.className = 'imgcats';
+      cardBox.appendChild(imageBox);
+      imageBox.onerror = function () {
+        imageBox.src = 'https://www.sciencedaily.com/images/2017/08/170809142044_1_540x360.jpg';
+      }
+      imageBox.src = element.data.url;
+      // console.log(element.data.thumbnail);
 
       let titleBox = document.createElement('div');
       titleBox.className = 'title';
       titleBox.innerText = element.data.title;
       cardBox.appendChild(titleBox);
-      
-      let imageBox = document.createElement('img');
-      imageBox.className = 'imgSub1';
-      cardBox.appendChild(imageBox);
-      imageBox.onerror = function () {
-        imageBox.src = 'https://www.sciencedaily.com/images/2017/08/170809142044_1_540x360.jpg';
-      }
-      imageBox.src = element.data.thumbnail;
-      // console.log(element.data.thumbnail);
 
       let taglineBox = document.createElement('div');
       taglineBox.className = 'tagline';
@@ -103,31 +119,13 @@ window.onload = function() {
       timeBox.className = 'time';
       timeBox.innerText = 'WHAT TIME IS IT?';
       taglineBox.appendChild(timeBox);
+
+      collectionBox.appendChild(cardBox);
     })
-
-
-
+    parentElem.appendChild(collectionBox);
 
   }
-  
-  // let surfReq = new XMLHttpRequest();
-  // surfReq.addEventListener('load', surfListener);
-  // surfReq.open('GET', 'https://www.reddit.com/r/food/.json');
-  // surfReq.send();
 
-  // let topNavSection = document.createElement('div');
-  // topNavSection.idName = 'topnav';
-  // document.body.appendChild(topNavSection);
+  getReddit('https://www.reddit.com/r/cats.json');
 
-  // let foodSection = document.createElement('li');
-  // foodSection.className = 'nav';
-  // foodSection.innerHTML = 'Food'
-  // topNavSection.appendChild(foodSection);
-
-  // let catSection = document.createElement('li');
-  // catSection.className = 'nav';
-  // catSection.innerHTML = 'Cats'
-  // topNavSection.appendChild(catSection);
-
-  
 }

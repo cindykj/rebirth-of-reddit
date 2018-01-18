@@ -11,6 +11,7 @@ body {
 
 .header {
   background-color: #f1f1f1;
+  // margin: auto;
   // padding: 20px;
   height: 72px;
   text-align: center; // insert bkgd ditty
@@ -32,6 +33,7 @@ img {
   font-family: 'Oswald', sans-serif;
   overflow: hidden;
   background-color: #333;
+  height: 45px;
 }
 
 a {
@@ -47,7 +49,9 @@ a {
 }
 
 a:hover {
-  background-color: orange;
+  color: orange;
+  -webkit-transition: -webkit-transform 1.0s ease-in-out;
+  transition: transform 1.0s ease-in-out;
 }
 
 .footer {
@@ -57,14 +61,14 @@ a:hover {
   margin: auto;
 }
 
-// div.fb, div.insta {
-// }
 div.fb {
   content: url('../assets/facebook_grey.svg');
+  display: inline-block;
 }
 
 div.insta {
   content: url('../assets/instagram_grey.svg');
+  display: inline-block;
 }
 
 div.insta:hover {
@@ -74,20 +78,27 @@ div.insta:hover {
 #main {
   border: 1px solid green;
   margin: 20px;
-  padding: 2px; // width: auto;
+  // padding-left: 20%;
+  
 }
 
-.container{
+.container {
   border: 1px solid blue;
-  max-width: 675px;
+  max-width: 769px;
+  margin: auto;
+  overflow: auto;
+  padding: 10px;
+  
 }
 
 .card {
   border: 1px solid yellow;
+  padding: 10px;
   display: inline-block;
-  margin: 5px;
-  // padding: 21px;
-  width: 48%;
+  margin: 12.5px;
+  padding: 10px;
+  width: 322px;
+  height: 397px;
   background-color: whitesmoke; 
 }
 
@@ -108,37 +119,17 @@ div.insta:hover {
   font-size: 8pt; // display: inline-block;
 }
 
-// .row {
-//   border: 1px solid black;
-// }
-
-// .column {
-//   border: 1px solid white;
-//   float: left;
-//   width: 50%;
-//   padding: 10px;
-//   margin: 20px;
+// .collection {
+//   border: 1px solid red;
 // }
 
 
 @media (max-width: 600px) {
-  .column {
+  .container {
       width: 100%;
   }
 }
 
-
-// .author {
-//   float: left;
-// }
-
-// .score {
-//   float: 55%;
-// }
-
-// .time {
-//   float: right;
-// }
 
 
 // to center horizontally

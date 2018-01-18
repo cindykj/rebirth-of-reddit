@@ -25,7 +25,8 @@ img {
   border: 1px solid black;
   font-family: 'Oswald', sans-serif;
   overflow: hidden;
-  background-color: #333; }
+  background-color: #333;
+  height: 45px; }
 
 a {
   display: inline-block;
@@ -35,7 +36,9 @@ a {
   text-decoration: none; }
 
 a:hover {
-  background-color: orange; }
+  color: orange;
+  -webkit-transition: -webkit-transform 1.0s ease-in-out;
+  transition: transform 1.0s ease-in-out; }
 
 .footer {
   background-color: #333;
@@ -44,28 +47,35 @@ a:hover {
   margin: auto; }
 
 div.fb {
-  content: url("../assets/facebook_grey.svg"); }
+  content: url("../assets/facebook_grey.svg");
+  display: inline-block; }
 
 div.insta {
-  content: url("../assets/instagram_grey.svg"); }
+  content: url("../assets/instagram_grey.svg");
+  display: inline-block; }
 
 div.insta:hover {
   content: url("../assets/instagram_orange.svg"); }
 
 #main {
   border: 1px solid green;
-  margin: 20px;
-  padding: 2px; }
+  margin: 20px; }
 
 .container {
   border: 1px solid blue;
-  max-width: 675px; }
+  max-width: 769px;
+  margin: auto;
+  overflow: auto;
+  padding: 10px; }
 
 .card {
   border: 1px solid yellow;
+  padding: 10px;
   display: inline-block;
-  margin: 5px;
-  width: 48%;
+  margin: 12.5px;
+  padding: 10px;
+  width: 322px;
+  height: 397px;
   background-color: whitesmoke; }
 
 .title {
@@ -83,7 +93,7 @@ div.insta:hover {
   font-size: 8pt; }
 
 @media (max-width: 600px) {
-  .column {
+  .container {
     width: 100%; } }
 
 /* for vertical centering
