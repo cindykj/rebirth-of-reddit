@@ -15,7 +15,7 @@ body {
   height: 72px;
   text-align: center; // insert bkgd ditty
   background-image: url('../assets/header_bg.svg'), url('../assets/logo.svg');
-  background-repeat: no-repeat, no-repeat;
+  background-repeat: no-repeat,;
   background-position: center, center;
   // background-size: 138px 152px;
 }
@@ -32,7 +32,6 @@ img {
   font-family: 'Oswald', sans-serif;
   overflow: hidden;
   background-color: #333;
-  height: 44px;
 }
 
 a {
@@ -75,17 +74,21 @@ div.insta:hover {
 #main {
   border: 1px solid green;
   margin: 20px;
-  padding: 10px; // width: auto;
+  padding: 2px; // width: auto;
 }
 
-.container {
+.container{
+  border: 1px solid blue;
+  max-width: 675px;
+}
+
+.card {
   border: 1px solid yellow;
-  margin: 12.5px;
-  padding: 21px;
-  width: 322px;
-  height: 397px;
-  background-color: whitesmoke; // width: 300px;
-  // height: 300px;
+  display: inline-block;
+  margin: 5px;
+  // padding: 21px;
+  width: 48%;
+  background-color: whitesmoke; 
 }
 
 .title {
@@ -105,23 +108,18 @@ div.insta:hover {
   font-size: 8pt; // display: inline-block;
 }
 
-.row {
-  border: 1px solid black;
-}
+// .row {
+//   border: 1px solid black;
+// }
 
-.column {
-  border: 1px solid white;
-  float: left;
-  width: 50%;
-  padding: 10px;
-  margin: 20px;
-}
+// .column {
+//   border: 1px solid white;
+//   float: left;
+//   width: 50%;
+//   padding: 10px;
+//   margin: 20px;
+// }
 
-.row:after {
-  content: '';
-  display: table;
-  clear: both;
-}
 
 @media (max-width: 600px) {
   .column {

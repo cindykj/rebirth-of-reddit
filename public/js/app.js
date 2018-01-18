@@ -1,14 +1,10 @@
 window.onload = function() {
   // console.log('sanity check')
   
-  // Create Header and insert logo
+  // Create Header
   let headerBox = document.createElement('div');
   headerBox.className = 'header';
   document.body.appendChild(headerBox);
-
-  // let logoBox = document.createElement('IMG');
-  // logoBox.setAttribute('src','../assets/logo.svg');
-  // headerBox.appendChild(logoBox);
 
   // Create Nav Bar
   let navBox = document.createElement('div');
@@ -33,11 +29,16 @@ window.onload = function() {
   getAppBox.innerHTML = 'Get the App';
   navBox.appendChild(getAppBox);
 
-  // Create main container
+  // Create main box
   let mainBox = document.createElement('div');
   mainBox.id = 'main';
   mainBox.innerHTML = ''; //drop first then create new content
   document.body.appendChild(mainBox);
+
+  // Create Container Box
+  let containerBox = document.createElement('div');
+  containerBox.className = 'container';
+  mainBox.appendChild(containerBox);
   
   // Create Footer + insert FB/Insta logos
   let footerBox = document.createElement('div');
@@ -66,26 +67,18 @@ window.onload = function() {
 
     array.forEach(function (element, index, array) {
 
-      let rowBox = document.createElement('div');
-      rowBox.className = 'row';
-      mainBox.appendChild(rowBox);
-
-      let columnBox = document.createElement('div');
-      columnBox.className = 'column';
-      rowBox.appendChild(columnBox);
-
-      let containerBox = document.createElement('div');
-      containerBox.className = 'container';
-      columnBox.appendChild(containerBox);
+      let cardBox = document.createElement('div');
+      cardBox.className = 'card';
+      containerBox.appendChild(cardBox);
 
       let titleBox = document.createElement('div');
       titleBox.className = 'title';
       titleBox.innerText = element.data.title;
-      containerBox.appendChild(titleBox);
+      cardBox.appendChild(titleBox);
       
       let imageBox = document.createElement('img');
       imageBox.className = 'imgSub1';
-      containerBox.appendChild(imageBox);
+      cardBox.appendChild(imageBox);
       imageBox.onerror = function () {
         imageBox.src = 'https://www.sciencedaily.com/images/2017/08/170809142044_1_540x360.jpg';
       }
@@ -94,7 +87,7 @@ window.onload = function() {
 
       let taglineBox = document.createElement('div');
       taglineBox.className = 'tagline';
-      containerBox.appendChild(taglineBox);
+      cardBox.appendChild(taglineBox);
 
       let authorBox = document.createElement('div');
       authorBox.className = 'author';
