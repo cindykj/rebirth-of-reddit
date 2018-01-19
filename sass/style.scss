@@ -9,26 +9,23 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
-.header {
+#header {
   background-color: #f1f1f1;
-  // margin: auto;
+  margin: auto;
   // padding: 20px;
   height: 72px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  // position: fixed;
   text-align: center; // insert bkgd ditty
   background-image: url('../assets/header_bg.svg'), url('../assets/logo.svg');
   background-repeat: no-repeat,;
   background-position: center, center;
   // background-size: 138px 152px;
 }
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 277px;
-  height: 168px;
-}
 
-.topnav {
+#topnav {
   border: 1px solid black;
   font-family: 'Oswald', sans-serif;
   overflow: hidden;
@@ -41,11 +38,20 @@ a {
   // margin: auto;
   // width: 400px;
   // position: center;
+  border: 1px solid red;
   display: inline-block;
   color: darkgrey;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 277px;
+  height: 168px;
 }
 
 a:hover {
@@ -54,19 +60,25 @@ a:hover {
   transition: transform 1.0s ease-in-out;
 }
 
-.footer {
+#footer {
   background-color: #333;
   padding: 20 px;
   text-align: center;
   margin: auto;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+
 }
 
-div.fb {
+div#fb {
   content: url('../assets/facebook_grey.svg');
   display: inline-block;
 }
 
-div.insta {
+div#insta {
   content: url('../assets/instagram_grey.svg');
   display: inline-block;
 }
@@ -77,28 +89,27 @@ div.insta:hover {
 
 #main {
   border: 1px solid green;
-  margin: 20px;
+  // margin: 20px;
   // padding-left: 20%;
   
 }
 
-.container {
+#container {
   border: 1px solid blue;
   max-width: 769px;
   margin: auto;
   overflow: auto;
-  padding: 10px;
+  // padding: 10px;
   
 }
 
 .card {
   border: 1px solid yellow;
-  padding: 10px;
   display: inline-block;
-  margin: 12.5px;
-  padding: 10px;
-  width: 322px;
-  height: 397px;
+  margin: 5px; 
+  padding: 22px;
+  width: 323px;
+  height: 398px;
   background-color: whitesmoke; 
 }
 
@@ -106,27 +117,43 @@ div.insta:hover {
   font-family: 'Oswald', sans-serif;
   color: rgb(46, 45, 45);
   border: 1px solid black;
-  margin: 10px;
-  padding: 5px;
+  height: 46px;
+  // width: 168px
+  // margin: 10px;
+  // padding: 5px;
 }
 
-
+// Tagline contents
 .tagline {
   border: 1px solid purple;
   margin: 10px;
   padding: 5px;
   color: rgb(61, 60, 60);
   font-size: 8pt; // display: inline-block;
+  overflow: auto;
 }
 
-// .collection {
-//   border: 1px solid red;
-// }
+.author {
+  border: 1px solid red;
+  float: left;
+  margin-right: 1rem;
+}
+
+.score {
+  border: 1px solid green;
+  float: left;
+  margin-right: 1rem;
+}
+
+.time {
+  float: left;
+  
+}
 
 
-@media (max-width: 600px) {
+@media (max-width: 667px) {
   .container {
-      width: 100%;
+      width: 350px;
   }
 }
 

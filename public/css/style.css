@@ -6,13 +6,32 @@ body {
   background-image: url("../assets/bg.jpg");
   font-family: 'Lato', sans-serif; }
 
-.header {
+#header {
   background-color: #f1f1f1;
+  margin: auto;
   height: 72px;
+  width: 100%;
+  top: 0;
+  left: 0;
   text-align: center;
   background-image: url("../assets/header_bg.svg"), url("../assets/logo.svg");
   background-repeat: no-repeat;
   background-position: center, center; }
+
+#topnav {
+  border: 1px solid black;
+  font-family: 'Oswald', sans-serif;
+  overflow: hidden;
+  background-color: #333;
+  height: 45px; }
+
+a {
+  border: 1px solid red;
+  display: inline-block;
+  color: darkgrey;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none; }
 
 img {
   display: block;
@@ -21,36 +40,26 @@ img {
   width: 277px;
   height: 168px; }
 
-.topnav {
-  border: 1px solid black;
-  font-family: 'Oswald', sans-serif;
-  overflow: hidden;
-  background-color: #333;
-  height: 45px; }
-
-a {
-  display: inline-block;
-  color: darkgrey;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none; }
-
 a:hover {
   color: orange;
   -webkit-transition: -webkit-transform 1.0s ease-in-out;
   transition: transform 1.0s ease-in-out; }
 
-.footer {
+#footer {
   background-color: #333;
   padding: 20 px;
   text-align: center;
-  margin: auto; }
+  margin: auto;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%; }
 
-div.fb {
+div#fb {
   content: url("../assets/facebook_grey.svg");
   display: inline-block; }
 
-div.insta {
+div#insta {
   content: url("../assets/instagram_grey.svg");
   display: inline-block; }
 
@@ -58,43 +67,53 @@ div.insta:hover {
   content: url("../assets/instagram_orange.svg"); }
 
 #main {
-  border: 1px solid green;
-  margin: 20px; }
+  border: 1px solid green; }
 
-.container {
+#container {
   border: 1px solid blue;
   max-width: 769px;
   margin: auto;
-  overflow: auto;
-  padding: 10px; }
+  overflow: auto; }
 
 .card {
   border: 1px solid yellow;
-  padding: 10px;
   display: inline-block;
-  margin: 12.5px;
-  padding: 10px;
-  width: 322px;
-  height: 397px;
+  margin: 5px;
+  padding: 22px;
+  width: 323px;
+  height: 398px;
   background-color: whitesmoke; }
 
 .title {
   font-family: 'Oswald', sans-serif;
   color: #2e2d2d;
   border: 1px solid black;
-  margin: 10px;
-  padding: 5px; }
+  height: 46px; }
 
 .tagline {
   border: 1px solid purple;
   margin: 10px;
   padding: 5px;
   color: #3d3c3c;
-  font-size: 8pt; }
+  font-size: 8pt;
+  overflow: auto; }
 
-@media (max-width: 600px) {
+.author {
+  border: 1px solid red;
+  float: left;
+  margin-right: 1rem; }
+
+.score {
+  border: 1px solid green;
+  float: left;
+  margin-right: 1rem; }
+
+.time {
+  float: left; }
+
+@media (max-width: 667px) {
   .container {
-    width: 100%; } }
+    width: 350px; } }
 
 /* for vertical centering
 position: relative
