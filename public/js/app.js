@@ -20,7 +20,7 @@ window.onload = function () {
 
   let catsStand = document.createElement('a');
   catsStand.id = 'catsStand';
-  catsStand.innerHTML = 'CatsStandingUp';
+  catsStand.innerHTML = 'Cats Standing Up';
   // catsStand.href = '#';
   catsStand.addEventListener('click', function () {
     getReddit('https://www.reddit.com/r/CatsStandingUp.json')
@@ -29,7 +29,7 @@ window.onload = function () {
 
   let catsAss = document.createElement('a');
   catsAss.id = 'catsAss';
-  catsAss.innerHTML = 'CatsAreAssholes';
+  catsAss.innerHTML = 'Cats Are Assholes';
   // catsAss.href = '#';
   catsAss.addEventListener('click', function () {
     getReddit('https://www.reddit.com/r/CatsAreAssholes.json');
@@ -38,7 +38,7 @@ window.onload = function () {
 
   let catsGlass = document.createElement('a');
   catsGlass.id = 'catsGlass';
-  catsGlass.innerHTML = 'CatsOnGlass';
+  catsGlass.innerHTML = 'Cats On Glass';
   // catsGlass.href = '#';
   catsGlass.addEventListener('click', function () {
     getReddit('https://www.reddit.com/r/catsonglass.json');
@@ -86,7 +86,11 @@ window.onload = function () {
 
       let timeBox = document.createElement('li');
       timeBox.className = 'time';
-      timeBox.innerText = 'updated ';
+
+      let formatTimeStamp = moment.unix(element.data.created_utc)
+      
+
+      timeBox.innerText = moment(formatTimeStamp).fromNow();
       taglineBox.appendChild(timeBox);
 
       containerBox.appendChild(cardBox);
@@ -101,5 +105,4 @@ window.onload = function () {
 
 
 /* adding moment timestamp
-let formatTimeStamp = moment.unix(element.data.created_utc)
-moment(timestamp).fromNow() */
+ */

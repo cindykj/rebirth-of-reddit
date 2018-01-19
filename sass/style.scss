@@ -18,11 +18,13 @@ body {
 #header {
   background-color: #f1f1f1;
   margin: auto;
-  // padding: 20px;
-  height: 72px;
+  padding: 30px;
+  // height: 72px;
+  overflow: auto;
   top: 0;
   left: 0;
   width: 100%;
+  // position: fixed;
   text-align: center; // insert bkgd ditty
   background-image: url('../assets/header_bg.svg'), url('../assets/logo.svg');
   background-repeat: no-repeat,;
@@ -35,14 +37,17 @@ body {
   font-family: 'Oswald', sans-serif;
   overflow: hidden;
   background-color: #333;
-  height: 45px;
-
+  // height: 45px;
+  width: 100%;
   text-align: center;
+  // position: fixed;
+
 }
 // #navcontainer {
 //   border: 1px solid pink;
 //   // margin: auto; 
 // }
+
 a {
   // float: left;
   // margin: auto;
@@ -50,14 +55,18 @@ a {
   // position: center;
   border: 1px solid red;
   display: inline-block;
-  color: darkgrey;
+  color: rgb(95, 95, 95);
   text-align: center;
-  padding: 14px 16px;
+  padding: 2px 16px;
   text-decoration: none;
+  text-transform: uppercase;
   width: fit-content;
+  cursor: pointer;
+  
 }
 
 img {
+  border: 1px solid red;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -109,7 +118,6 @@ div.insta:hover {
   max-width: 780px;
   margin: auto;
   overflow: auto;
-  // padding: 10px;
   
 }
 
@@ -126,6 +134,7 @@ div.insta:hover {
 // .card:hover {
 //   border: 5px solid orange;
 // }
+
 .title {
   font-family: 'Oswald', sans-serif;
   color: rgb(46, 45, 45);
@@ -136,7 +145,6 @@ div.insta:hover {
   // padding: 5px;
 }
 
-// Tagline contents
 .tagline {
   border: 1px solid purple;
   margin: 10px;
@@ -171,14 +179,9 @@ div.insta:hover {
 // }
 @media screen and (max-width: 480px) { //smallest
   #header {
-    height: 66px;
     background-image: url('../assets/logo.svg');
     background-repeat: no-repeat,;
     background-position: left;
-  }
-
-  #topnav {
-    height: 44px;
   }
 
   #container {
