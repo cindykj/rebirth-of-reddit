@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+  padding: 0; }
+
 html,
 body {
   box-sizing: border-box; }
@@ -10,9 +14,9 @@ body {
   background-color: #f1f1f1;
   margin: auto;
   height: 72px;
-  width: 100%;
   top: 0;
   left: 0;
+  width: 100%;
   text-align: center;
   background-image: url("../assets/header_bg.svg"), url("../assets/logo.svg");
   background-repeat: no-repeat;
@@ -23,7 +27,8 @@ body {
   font-family: 'Oswald', sans-serif;
   overflow: hidden;
   background-color: #333;
-  height: 45px; }
+  height: 45px;
+  text-align: center; }
 
 a {
   border: 1px solid red;
@@ -31,7 +36,8 @@ a {
   color: darkgrey;
   text-align: center;
   padding: 14px 16px;
-  text-decoration: none; }
+  text-decoration: none;
+  width: fit-content; }
 
 img {
   display: block;
@@ -43,14 +49,14 @@ img {
 a:hover {
   color: orange;
   -webkit-transition: -webkit-transform 1.0s ease-in-out;
-  transition: transform 1.0s ease-in-out; }
+  transition: transform 1.0s ease-in-out;
+  transition: color 500ms; }
 
 #footer {
   background-color: #333;
   padding: 20 px;
   text-align: center;
   margin: auto;
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%; }
@@ -71,14 +77,14 @@ div.insta:hover {
 
 #container {
   border: 1px solid blue;
-  max-width: 769px;
+  max-width: 780px;
   margin: auto;
   overflow: auto; }
 
 .card {
   border: 1px solid yellow;
   display: inline-block;
-  margin: 5px;
+  margin: 10px;
   padding: 22px;
   width: 323px;
   height: 398px;
@@ -101,7 +107,8 @@ div.insta:hover {
 .author {
   border: 1px solid red;
   float: left;
-  margin-right: 1rem; }
+  margin-right: 1rem;
+  text-decoration: none; }
 
 .score {
   border: 1px solid green;
@@ -111,9 +118,20 @@ div.insta:hover {
 .time {
   float: left; }
 
-@media (max-width: 667px) {
-  .container {
-    width: 350px; } }
+@media screen and (max-width: 480px) {
+  #header {
+    height: 66px;
+    background-image: url("../assets/logo.svg");
+    background-repeat: no-repeat;
+    background-position: left; }
+  #topnav {
+    height: 44px; }
+  #container {
+    width: 460px;
+    padding: 11px; }
+  #card {
+    width: 457px;
+    margin: auto; } }
 
 /* for vertical centering
 position: relative
